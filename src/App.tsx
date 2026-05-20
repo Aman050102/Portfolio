@@ -1,12 +1,15 @@
-import Navbar from './components/Navbar';
+import React from "react";
+import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Experience from "./components/Experience";
+import ProjectDashboard from "./components/ProjectDashboard";
 import ProjectCard from "./components/ProjectCard";
 import Certificate from "./components/Certificate";
 import { projects } from "./data/portfolioData";
 import { Terminal, ClipboardList } from "lucide-react";
 
 function App() {
+  // คง Logic เดิมของคุณไว้ทั้งหมด ไม่มีการตัดออก
   const otherProjects = projects.filter((p) => !p.title.includes("UP REG"));
   const upRegProject = projects.find((p) => p.title.includes("UP REG"));
 
@@ -31,6 +34,10 @@ function App() {
             <div className="h-1 flex-1 bg-slate-800 rounded-full"></div>
           </div>
 
+          {/* แทรกกล่องแดชบอร์ดภาพรวมขนาดใหญ่ตรงนี้ เพื่ออธิบายภาพรวมโปรเจกต์ทั้งหมด */}
+          <ProjectDashboard />
+
+          {/* แสดงกล่อง Active Project ตัวหลัก (ถ้ามี) */}
           {upRegProject && (
             <div className="grid lg:grid-cols-2 gap-8 bg-[#FFFDF6] p-6 rounded-[2rem] border-4 border-slate-800 shadow-[8px_8px_0px_0px_rgba(30,41,59,1)] mb-12">
               <div className="space-y-5 flex flex-col justify-between">
@@ -101,7 +108,8 @@ function App() {
             </div>
           )}
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* รายการกล่องเล็กรายฟีเจอร์อื่นๆ ที่เหลือทั้งหมด */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {otherProjects.map((p, i) => (
               <ProjectCard key={i} project={p} />
             ))}

@@ -104,7 +104,7 @@ const Experience: React.FC = () => {
         <header className="mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-xl bg-slate-800 text-white border-2 border-slate-900 shadow-[3px_3px_0px_0px_rgba(251,191,36,1)]">
             <span className="text-xs uppercase font-black tracking-widest">
-              Technical Proficiency 💻
+              Technical Proficiency
             </span>
           </div>
         </header>
@@ -144,7 +144,7 @@ const Experience: React.FC = () => {
 
         <div className="mt-16 p-8 bg-[#FFF9E6] border-4 border-slate-800 rounded-3xl shadow-[6px_6px_0px_0px_rgba(30,41,59,1)]">
           <h4 className="text-xs uppercase tracking-widest text-slate-800 font-black mb-6">
-            Interpersonal Attributes ✨
+            Interpersonal Attributes 
           </h4>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {[

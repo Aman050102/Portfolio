@@ -1,5 +1,5 @@
 import React from "react";
-import { ChevronRight, TestTube, Code, Search } from "lucide-react";
+import { TestTube, Code, Search } from "lucide-react";
 import type { Project } from "../data/portfolioData";
 
 const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
@@ -10,41 +10,82 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
         ? Search
         : Code;
 
+  const badgeColor =
+    project.type === "Automation"
+      ? "bg-emerald-600"
+      : project.type === "Manual"
+        ? "bg-amber-500 text-slate-900"
+        : "bg-blue-600";
+
   return (
-    <div className="group bg-[#FFFDF6] border-4 border-slate-800 rounded-2xl p-6 shadow-[6px_6px_0px_0px_rgba(30,41,59,1)] hover:translate-y-[-4px] transition-all flex flex-col justify-between h-full">
+    <div className="group bg-[#FFFDF6] border-4 border-slate-800 rounded-2xl p-5 shadow-[5px_5px_0px_0px_rgba(30,41,59,1)] hover:translate-y-[-4px] transition-all flex flex-col justify-between h-full">
       <div>
-        <div className="flex justify-between items-start mb-4">
-          <div className="p-2.5 bg-amber-100 border-2 border-slate-800 rounded-xl shadow-[2px_2px_0px_0px_rgba(30,41,59,1)]">
-            <Icon size={20} className="text-slate-800" />
+        <div className="flex justify-between items-center mb-3">
+          <div className="p-2 bg-amber-100 border-2 border-slate-800 rounded-lg shadow-[1.5px_1.5px_0px_0px_rgba(30,41,59,1)]">
+            <Icon size={18} className="text-slate-800" />
           </div>
-          <span className="bg-slate-800 text-white text-[10px] uppercase font-black px-2.5 py-1 border-2 border-slate-800 rounded-md">
+          <span className={`text-[9px] uppercase font-black px-2 py-0.5 border-2 border-slate-800 rounded-md text-white ${badgeColor}`}>
             {project.type}
           </span>
         </div>
-        <h3 className="text-xl font-black mb-2 text-slate-800 tracking-tight">
+
+        <div className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-1">
+          📁 {project.systemName}
+        </div>
+
+        <h3 className="text-lg font-black mb-2 text-slate-800 tracking-tight leading-snug">
           {project.title}
         </h3>
-        <p className="text-slate-600 text-sm font-medium mb-6 leading-relaxed line-clamp-3">
+
+        <p className="text-slate-600 text-xs font-medium mb-4 leading-relaxed line-clamp-3">
           {project.description}
         </p>
       </div>
 
       <div>
-        <div className="flex flex-wrap gap-1.5 mb-6">
+        <div className="flex flex-wrap gap-1 mb-4">
           {project.tags.map((tag) => (
-            <span key={tag} className="text-[11px] font-bold text-amber-600">
+            <span key={tag} className="text-[10px] font-bold text-amber-600">
               #{tag}
             </span>
           ))}
         </div>
-        <a
-          href={project.link}
-          target="_blank"
-          rel="noreferrer"
-          className="inline-flex items-center gap-1 text-sm font-black text-slate-800 hover:text-amber-500 transition-colors"
-        >
-          View Work <ChevronRight size={16} />
-        </a>
+
+        <div className="border-t-2 border-dashed border-slate-200 pt-3 flex flex-wrap gap-2 justify-end">
+          {project.testCaseLink && project.testCaseLink !== "#" && (
+            <a
+              href={project.testCaseLink}
+              target="_blank"
+              rel="noreferrer"
+              className="px-2 py-1 bg-amber-400 hover:bg-amber-500 border-2 border-slate-800 rounded-md text-[10px] font-black text-slate-900 inline-flex items-center gap-1 transition-colors shadow-[1px_1px_0px_0px_rgba(30,41,59,1)]"
+            >
+              Test Case
+            </a>
+          )}
+
+          {project.robotLink && project.robotLink !== "#" && (
+            <a
+              href={project.robotLink}
+              target="_blank"
+              rel="noreferrer"
+              className="px-2 py-1 bg-slate-800 hover:bg-slate-900 border-2 border-slate-800 rounded-md text-[10px] font-black text-white inline-flex items-center gap-1 transition-colors shadow-[1px_1px_0px_0px_rgba(30,41,59,1)]"
+            >
+              {project.type === "Development" ? "Source Code " : "Robot Code "}
+            </a>
+          )}
+
+          {/* ปุ่มแสดงลิงก์ Production จริงบน Vercel สำหรับงานฝั่ง Development/Web App */}
+          {project.productionLink && project.productionLink !== "#" && (
+            <a
+              href={project.productionLink}
+              target="_blank"
+              rel="noreferrer"
+              className="px-2 py-1 bg-sky-400 hover:bg-sky-500 border-2 border-slate-800 rounded-md text-[10px] font-black text-slate-900 inline-flex items-center gap-1 transition-colors shadow-[1px_1px_0px_0px_rgba(30,41,59,1)]"
+            >
+              Live Site
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );

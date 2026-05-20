@@ -70,6 +70,13 @@ export const certificates: Certificate[] = [
     image: "/Certificate/Prompt Engineering with GitHub Copilot.jpg",
     category: "training",
   },
+   {
+    name: "Creating a Basic Web Page with HTML and CSS",
+    issuer: "THAI MOOC",
+    date: "2026",
+    image: "/Certificate/Creating a Basic Web Page with HTML and CSS.jpg",
+    category: "training",
+  },
   {
     name: "Active Board Member of Muslim Student Club, University of Phayao (Academic Year 2025)",
     issuer: "Student Leader",
