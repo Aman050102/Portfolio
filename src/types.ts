@@ -4,7 +4,7 @@ export interface Project {
   description: string;
   tags: string[];
   link: string;
-  type: 'Automation' | 'Manual' | 'Development';
+  type: "Automation" | "Manual" | "Development";
   githubLink?: string;
   testCases?: any[];
 }
@@ -14,5 +14,5 @@ export interface Certificate {
   issuer: string;
   date: string;
   image: string;
-  category: 'achievement' | 'learning';
+  category: "achievement" | "learning";
 }

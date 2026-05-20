@@ -5,9 +5,9 @@
     scroll-behavior: smooth;
   }
   body {
-    background-color: #FFFDF9;
+    background-color: #fffdf9;
     color: #1e293b;
     margin: 0;
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: "Inter", system-ui, sans-serif;
   }
 }

@@ -1,6 +1,6 @@
 export default {
   plugins: {
-    '@tailwindcss/postcss': {}, // แก้ไขบรรทัดนี้
+    "@tailwindcss/postcss": {}, // แก้ไขบรรทัดนี้
     autoprefixer: {},
   },
-}
+};
