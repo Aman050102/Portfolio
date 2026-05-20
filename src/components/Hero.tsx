@@ -51,7 +51,7 @@ const Hero: React.FC = () => (
       <div className="relative rotate-3 hover:rotate-0 transition-transform duration-300">
         <div className="w-72 h-72 bg-white border-4 border-slate-800 rounded-[2rem] overflow-hidden shadow-[8px_8px_0px_0px_rgba(30,41,59,1)]">
           <img
-            src="/public/Profile.jpg"
+            src="/Profile.jpg"
             alt="Profile"
             className="object-cover w-full h-full"
             onError={(e) => {
@@ -60,7 +60,7 @@ const Hero: React.FC = () => (
           />
         </div>
         <div className="absolute -bottom-3 -right-3 bg-amber-400 border-2 border-slate-800 text-slate-900 text-xs font-black px-3 py-1 rounded-md shadow-md">
-          HI THERE! 👋
+          HI THERE!
         </div>
       </div>
     </div>
