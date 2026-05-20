@@ -1,70 +1,78 @@
 import React from 'react';
 import {
-  ShieldCheck, Layout, Terminal, Cloud,
-  Sparkles, Users, Database, Cpu
+  ShieldCheck, Layout, Terminal,
+  Sparkles, Database, Cpu, ArrowUpRight
 } from 'lucide-react';
 
 const Experience: React.FC = () => {
   const skillGroups = [
     {
       title: "AI & Intelligence",
-      icon: <Sparkles size={16} />,
-      skills: ["Gemini", "ChatGPT", "Claude", "DeepSeek", "YOLO", "OpenCV", "Train Model"]
+      icon: <Sparkles className="text-amber-500" size={20} />,
+      skills: ["Gemini", "ChatGPT", "Claude", "DeepSeek", "YOLO", "OpenCV", "Train Model"],
+      color: "bg-amber-50"
     },
     {
       title: "QA & Automation",
-      icon: <ShieldCheck size={16} />,
-      skills: ["Robot Framework", "Selenium", "Postman", "Jira", "E2E Testing", "Requirement"]
+      icon: <ShieldCheck className="text-sky-500" size={20} />,
+      skills: ["Robot Framework", "Selenium", "Postman", "Jira", "E2E Testing", "Test Planning", "UAT", "SDLC / V-Model", "Scrum", "White & Black Box"],
+      color: "bg-sky-50"
     },
     {
       title: "Systems & CMD",
-      icon: <Cpu size={16} />,
-      skills: ["Linux CLI", "Bash Script", "Terminal", "Ngrok", "SSH", "Git Command"]
+      icon: <Cpu className="text-emerald-500" size={20} />,
+      skills: ["Linux CLI", "Bash Script", "Terminal", "Ngrok", "SSH", "Git Command"],
+      color: "bg-emerald-50"
     },
     {
       title: "Front-end Architecture",
-      icon: <Layout size={16} />,
-      skills: ["Next.js", "React", "TypeScript", "HTML5", "CSS3", "Tailwind CSS", "Figma"]
+      icon: <Layout className="text-rose-500" size={20} />,
+      skills: ["Next.js", "React", "TypeScript", "HTML5", "CSS3", "Tailwind CSS", "Figma"],
+      color: "bg-rose-50"
     },
     {
       title: "Back-end & Cloud",
-      icon: <Terminal size={16} />,
-      skills: ["Node.js", "Hono", "Laravel", "Python", "MySQL", "AWS", "Vercel"]
+      icon: <Terminal className="text-indigo-500" size={20} />,
+      skills: ["Node.js", "Hono", "Laravel", "Python", "MySQL", "AWS", "Vercel"],
+      color: "bg-indigo-50"
     },
     {
       title: "Automation & Flow",
-      icon: <Database size={16} />,
-      skills: ["n8n", "CI/CD Pipeline", "JSON", "OAuth 2.0", "Cloudflare", "SonarCloud"]
+      icon: <Database className="text-purple-500" size={20} />,
+      skills: ["n8n", "CI/CD Pipeline", "JSON", "OAuth 2.0", "Cloudflare", "SonarCloud"],
+      color: "bg-purple-50"
     }
   ];
 
   return (
-    <section className="py-28 bg-[#030303] text-white rounded-[4rem] px-8 md:px-16 my-20 relative overflow-hidden">
-      {/* Subtle Glow Background */}
-      <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-blue-600/5 rounded-full blur-[120px] pointer-events-none" />
-
-      <div className="relative z-10 max-w-5xl mx-auto">
-        <header className="mb-24">
-          <h2 className="text-[10px] uppercase tracking-[0.5em] text-blue-500 font-black mb-4">Technical Proficiency</h2>
-          <h1 className="text-5xl md:text-6xl font-extralight tracking-tighter text-white">
-            Skill <span className="font-serif italic text-slate-500">Inventory</span>
-          </h1>
+    <section id="skills" className="py-16 relative overflow-hidden">
+      <div className="max-w-7xl mx-auto">
+        <header className="mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-xl bg-slate-800 text-white border-2 border-slate-900 shadow-[3px_3px_0px_0px_rgba(251,191,36,1)]">
+            <span className="text-xs uppercase font-black tracking-widest">Technical Proficiency 💻</span>
+          </div>
         </header>
 
-        {/* --- Skills Grid --- */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skillGroups.map((group, idx) => (
-            <div key={idx} className="group flex flex-col">
-              <div className="flex items-center gap-3 mb-8 border-b border-slate-900 pb-4 group-hover:border-blue-500/30 transition-all duration-500">
-                <span className="text-blue-500/80">{group.icon}</span>
-                <h3 className="text-xs font-bold tracking-[0.2em] uppercase text-slate-200">{group.title}</h3>
+            <div
+              key={idx}
+              className="bg-[#FFFDF6] border-4 border-slate-800 rounded-3xl p-6 shadow-[6px_6px_0px_0px_rgba(30,41,59,1)] hover:translate-y-[-4px] transition-all duration-300"
+            >
+              <div className="flex items-center justify-between mb-6">
+                <div className={`p-3 rounded-2xl border-2 border-slate-800 shadow-[2px_2px_0px_0px_rgba(30,41,59,1)] ${group.color}`}>
+                  {group.icon}
+                </div>
+                <ArrowUpRight className="text-slate-400" size={20} />
               </div>
 
-              <div className="flex flex-wrap gap-x-6 gap-y-4">
+              <h3 className="text-sm font-black tracking-wider uppercase text-slate-800 mb-4">{group.title}</h3>
+
+              <div className="flex flex-wrap gap-2">
                 {group.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="text-[13px] text-slate-500 font-light hover:text-blue-400 transition-colors duration-300 cursor-default"
+                    className="px-3 py-1.5 text-xs bg-white border-2 border-slate-800 rounded-lg text-slate-700 font-bold shadow-[2px_2px_0px_0px_rgba(30,41,59,1)] hover:bg-amber-400 hover:text-slate-950 transition-colors cursor-default"
                   >
                     {skill}
                   </span>
@@ -74,34 +82,15 @@ const Experience: React.FC = () => {
           ))}
         </div>
 
-        {/* --- Footer Section: Soft Skills & Key Metrics --- */}
-        <div className="mt-40 pt-16 border-t border-slate-900 grid md:grid-cols-2 gap-16 items-center">
-          <div className="space-y-6">
-            <h4 className="text-[10px] uppercase tracking-[0.3em] text-slate-600 font-bold">Interpersonal Attributes</h4>
-            <div className="flex flex-wrap gap-x-8 gap-y-4">
-              {["Problem Solving", "Critical Thinking", "Team Collaboration", "Attention to Detail" , "Time Management", "Teamwork", "Adaptability", "Positive Attitude", "Communication Skills"
-              ].map(s => (
-                <span key={s} className="text-[14px] text-slate-400 font-extralight italic">
-                  — {s}
-                </span>
-              ))}
-            </div>
-          </div>
-
-          {/* Metrics Section: นี่คือส่วนที่คุณถามถึงครับ */}
-          <div className="flex justify-between md:justify-end gap-16">
+        <div className="mt-16 p-8 bg-[#FFF9E6] border-4 border-slate-800 rounded-3xl shadow-[6px_6px_0px_0px_rgba(30,41,59,1)]">
+          <h4 className="text-xs uppercase tracking-widest text-slate-800 font-black mb-6">Interpersonal Attributes ✨</h4>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {[
-              { label: "Testing", val: "Automation" },
-              { label: "Systems", val: "Linux" },
-              { label: "Logic", val: "Clean Code" }
-            ].map((item, i) => (
-              <div key={i} className="text-right">
-                <div className="text-3xl font-extralight text-white mb-2 tracking-tighter hover:text-blue-500 transition-colors">
-                  {item.val}
-                </div>
-                <div className="text-[9px] uppercase tracking-[0.3em] text-slate-600 font-black">
-                  {item.label}
-                </div>
+              "Problem Solving", "Critical Thinking", "Team Collaboration",
+              "Attention to Detail", "Time Management", "Adaptability"
+            ].map(s => (
+              <div key={s} className="bg-white border-2 border-slate-800 px-4 py-2.5 rounded-xl text-center shadow-[2px_2px_0px_0px_rgba(30,41,59,1)]">
+                <span className="text-xs text-slate-700 font-black tracking-tight">{s}</span>
               </div>
             ))}
           </div>
