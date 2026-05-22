@@ -144,7 +144,7 @@ const Experience: React.FC = () => {
 
         <div className="mt-16 p-8 bg-[#FFF9E6] border-4 border-slate-800 rounded-3xl shadow-[6px_6px_0px_0px_rgba(30,41,59,1)]">
           <h4 className="text-xs uppercase tracking-widest text-slate-800 font-black mb-6">
-            Interpersonal Attributes 
+            Interpersonal Attributes
           </h4>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             {[

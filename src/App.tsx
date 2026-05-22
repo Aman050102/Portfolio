@@ -1,8 +1,6 @@
-import React from "react";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Experience from "./components/Experience";
-import ProjectDashboard from "./components/ProjectDashboard";
 import ProjectCard from "./components/ProjectCard";
 import Certificate from "./components/Certificate";
 import { projects } from "./data/portfolioData";
@@ -28,14 +26,11 @@ function App() {
             <div className="flex items-center gap-2 px-4 py-2 bg-slate-800 text-white rounded-xl border-2 border-slate-900 shadow-[3px_3px_0px_0px_rgba(251,191,36,1)]">
               <Terminal size={18} />
               <h2 className="text-xs font-black uppercase tracking-wider">
-                Featured QA Automation Work 🛠️
+                Featured Work
               </h2>
             </div>
             <div className="h-1 flex-1 bg-slate-800 rounded-full"></div>
           </div>
-
-          {/* แทรกกล่องแดชบอร์ดภาพรวมขนาดใหญ่ตรงนี้ เพื่ออธิบายภาพรวมโปรเจกต์ทั้งหมด */}
-          <ProjectDashboard />
 
           {/* แสดงกล่อง Active Project ตัวหลัก (ถ้ามี) */}
           {upRegProject && (
@@ -65,7 +60,7 @@ function App() {
                     ))}
                   </div>
                   <a
-                    href={upRegProject.link}
+                    href={upRegProject.testCaseLink}
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center gap-2 bg-slate-800 text-white px-5 py-3 rounded-xl font-black text-sm border-2 border-slate-900 shadow-[3px_3px_0px_0px_rgba(30,41,59,1)] hover:translate-y-[-2px] transition-all"

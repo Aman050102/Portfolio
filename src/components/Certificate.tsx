@@ -70,7 +70,7 @@ export const certificates: Certificate[] = [
     image: "/Certificate/Prompt Engineering with GitHub Copilot.jpg",
     category: "training",
   },
-   {
+  {
     name: "Creating a Basic Web Page with HTML and CSS",
     issuer: "THAI MOOC",
     date: "2026",

@@ -1,4 +1,3 @@
-import React from "react";
 import { TestTube, Code, Search } from "lucide-react";
 import type { Project } from "../data/portfolioData";
 
@@ -24,7 +23,9 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
           <div className="p-2 bg-amber-100 border-2 border-slate-800 rounded-lg shadow-[1.5px_1.5px_0px_0px_rgba(30,41,59,1)]">
             <Icon size={18} className="text-slate-800" />
           </div>
-          <span className={`text-[9px] uppercase font-black px-2 py-0.5 border-2 border-slate-800 rounded-md text-white ${badgeColor}`}>
+          <span
+            className={`text-[9px] uppercase font-black px-2 py-0.5 border-2 border-slate-800 rounded-md text-white ${badgeColor}`}
+          >
             {project.type}
           </span>
         </div>
